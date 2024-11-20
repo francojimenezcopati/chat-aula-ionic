@@ -1,0 +1,99 @@
+<div class="flex items-center justify-center text-2xl">
+    <form
+        [formGroup]="credentials"
+        class="w-11/12 p-8 bg-gray-800 rounded-lg shadow-lg mt-2 mb-2 flex flex-col justify-center items-center"
+    >
+        <img
+            src="/assets/icon/favicon.png"
+            alt="icon"
+            width="200"
+            class="mb-10"
+        />
+        <div class="mb-4">
+            <ion-input
+                label="Correo Electrónico"
+                labelPlacement="stacked"
+                fill="solid"
+                placeholder="ejemplo@gmail.com"
+                class="text-white h-[77px]"
+                formControlName="email"
+            ></ion-input>
+            @if(email && email.touched && email.errors){
+            <ion-note slot="error" color="danger" class="text-base"
+                >El correo no es válido</ion-note
+            >
+            }
+        </div>
+        <div class="">
+            <ion-input
+                label="Contraseña"
+                labelPlacement="stacked"
+                fill="solid"
+                placeholder="contraseña"
+                type="password"
+                class="text-white"
+                formControlName="password"
+            >
+                <ion-input-password-toggle
+                    slot="end"
+                ></ion-input-password-toggle>
+            </ion-input>
+            @if(password && password.touched && password.errors){
+            <ion-note slot="bottom" color="danger" class="text-base"
+                >Mínimo 6 caracteres</ion-note
+            >
+            }
+        </div>
+
+        <div class="flex flex-col mt-6">
+            <ion-button
+                [disabled]="!credentials.valid"
+                shape="round"
+				class="text-2xl"
+                (click)="login()"
+                >Iniciar Sesión</ion-button
+            >
+        </div>
+
+        <ion-grid class="ion-margin-top">
+            <ion-row>
+                <ion-col>
+                    <ion-button
+                        expand="full"
+                        class="text-2xl"
+                        (click)="fillInGuest('1')"
+                        ><img
+                            src="/assets/userIcon.svg"
+                            class="w-10"
+                            alt=""
+                        />1</ion-button
+                    >
+                </ion-col>
+                <ion-col>
+                    <ion-button
+                        expand="full"
+                        class="text-2xl"
+                        (click)="fillInGuest('2')"
+                        ><img
+                            src="/assets/userIcon.svg"
+                            class="w-10"
+                            alt=""
+                        />2</ion-button
+                    >
+                </ion-col>
+                <ion-col>
+                    <ion-button
+                        expand="full"
+                        class="text-2xl"
+                        (click)="fillInGuest('3')"
+                        ><img
+                            src="/assets/userIcon.svg"
+                            class="w-10"
+                            alt=""
+                        />3</ion-button
+                    >
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </form>
+</div>

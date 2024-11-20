@@ -1,0 +1,36 @@
+<ion-header [translucent]="true">
+    <ion-toolbar>
+        <ion-title>Chat Aula</ion-title>
+        <ion-button
+            slot="end"
+            class="mr-2"
+            color="danger"
+            (click)="this.logout()"
+        >
+            <img src="/assets/LogoutIcon.svg" class="w-6 h-auto" alt="" />
+        </ion-button>
+    </ion-toolbar>
+</ion-header>
+
+<div class="flex flex-col justify-center items-center h-full m-3">
+    <ion-button
+        id="btn4a"
+        strong="true"
+        class="flex flex-col text-5xl w-full h-full"
+        (click)="onBtnClick('4A')"
+    >
+        <span class="w-full">PPS</span>
+        <span class="w-full">-</span>
+        <span class="w-full">4A</span>
+    </ion-button>
+    <ion-button
+        id="btn4b"
+        strong="true"
+        class="flex flex-col text-5xl w-full h-full"
+        (click)="onBtnClick('4B')"
+    >
+        <span class="w-full">PPS</span>
+        <span class="w-full">-</span>
+        <span class="w-full">4B</span>
+    </ion-button>
+</div>
